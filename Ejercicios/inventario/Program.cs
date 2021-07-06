@@ -1,164 +1,159 @@
-﻿#include <iostream>
-#include <string>
+﻿using System;
 
-using namespace std;
-
-string productos[5][3] = {
-    {"001", "iPhone xPlus", "0"}, 
-    {"002", "Laptop Dell Latitude", "5"},
-    {"003", "Monitor LG QLed", "2"},
-    {"004", "Mouse optico Ergonomic", "100"},
-    {"005", "Headset bits", "25"},
-};
-
-void listarProductos(){
-    system ("cls");
-    cout << endl;
-
-    cout << "*       Listado de Productos       *" << endl;
-    cout << "* Codigo, Descripcion y existencia *" << endl;
-    cout << endl;
-
-    for (int i = 0; i < 5; i++)
+namespace inventario
+{
+    class Program
     {
-        cout << productos[i][0] << " | " << productos[i][1]<< " | " << productos[i][2] << endl;
-    }  
-}
+        static string[,] productos = new string[5,3]
+        {
+            { "001", "iPhone xPlus", "10" },
+            { "002", "Laptop Dell Latitude", "15" },
+            { "003", "Monitor LG QLedg", "12" },
+            { "004", "MouseMouse optico Ergonomic", "100" },
+            { "005", "Headset bits", "50" },
+        };
 
-void movimientoInventario(string codigo, int cantidad, string tipoMovimiento){
-    for (int i = 0; i < 5; i++)
-    {
-        if (productos[i][0] == codigo){
-            if (tipoMovimiento == "+"){
-                productos[i][2] = to_string(stoi(productos[i][2]) + cantidad);
-            } else {
-                productos[i][2] = to_string(stoi(productos[i][2]) - cantidad);
+        static void listarProductos() {
+            Console.Clear();
+            Console.WriteLine("");
+         
+            Console.WriteLine("*      - Listado de Productos -     *");
+        
+            Console.WriteLine("*  - Codigo, Descripcion y Existencia - *");
+  
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(productos[i, 0] + " | " + productos[i, 1] + " | " + productos[i, 2]);
+            }
+
+            Console.ReadLine();
+        }
+
+        static void movimientoInventario(string codigo, int cantidad, string tipoMovimiento) {
+            for (int i = 0; i < 5; i++)
+            {
+                if (productos[i, 0] == codigo) {
+                    if (tipoMovimiento == "+") {
+                        productos[i, 2] = (Int32.Parse(productos[i, 2]) + cantidad).ToString();
+                    } else {
+                        productos[i, 2] = (Int32.Parse(productos[i, 2]) - cantidad).ToString();
+                    }
+                }
             }
         }
+
+        static void ingresoDeInventario() {
+            string codigo = "";
+            string cantidad = "";
+
+            Console.Clear();
+            Console.WriteLine();
+
+      
+            Console.WriteLine("* Ingreso de Productos al Inventario *");
+      
+            Console.Write("Ingrese el codigo del producto: ");
+            codigo = Console.ReadLine();
+            Console.Write("Ingrese la cantidad del producto: ");
+            cantidad = Console.ReadLine();
+
+            movimientoInventario(codigo, Int32.Parse(cantidad), "+");
+        }
+
+        static void salidaDeInventario() {
+            string codigo = "";
+            string cantidad = "";
+
+            Console.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("* Salida de Productos del Inventario *");
+            Console.Write("Ingrese el codigo del producto: ");
+            codigo = Console.ReadLine();
+            Console.Write("Ingrese la cantidad del producto: ");
+            cantidad = Console.ReadLine();
+
+            movimientoInventario(codigo, Int32.Parse(cantidad), "-");
+        }
+        
+        static void ajusteNegativoDelInventario() {
+            string codigo = "";
+            string cantidad = "";
+
+            Console.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("*   Ajuste Negativo del Inventario   *");
+            Console.Write("Ingrese el codigo del producto: ");
+            codigo = Console.ReadLine();
+            Console.Write("Ingrese la cantidad del producto: ");
+            cantidad = Console.ReadLine();
+
+            movimientoInventario(codigo, Int32.Parse(cantidad), "-");
+        }
+
+        static void ajustePositivoDelInventario() {
+            string codigo = "";
+            string cantidad = "";
+
+            Console.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("*   Ajuste Positivo del Inventario   *");
+            Console.Write("Ingrese el codigo del producto: ");
+            codigo = Console.ReadLine();
+            Console.Write("Ingrese la cantidad del producto: ");
+            cantidad = Console.ReadLine();
+
+            movimientoInventario(codigo, Int32.Parse(cantidad), "+");
+        }
+
+        static void Main(string[] args)
+        {
+            string opcion = "";
+
+            while (true)
+            {
+                Console.Clear();
+               
+                Console.WriteLine("*        Sistem of Inventory       *");
+        
+                Console.WriteLine("");
+                Console.WriteLine("1 - /Productos");
+                Console.WriteLine("2 - Ingreso de Inventario");
+                Console.WriteLine("3 - Salida de Inventario");
+                Console.WriteLine("4 - Ajuste Negativo del Inventario");
+                Console.WriteLine("5 - Ajuste Positivo del Inventario");
+                Console.WriteLine("0 - Salir");
+                opcion = Console.ReadLine();
+
+                switch (opcion)
+                {
+                    case "1": 
+                        listarProductos();
+                        break;
+                    case "2":
+                        ingresoDeInventario();
+                        break;
+                    case "3":
+                        salidaDeInventario();
+                        break;
+                    case "4":
+                        ajusteNegativoDelInventario();
+                        break;
+                    case "5":
+                        ajustePositivoDelInventario();
+                        break;
+
+                    default:
+                    break;
+                }
+
+                if (opcion == "0") {
+                    break;
+                }
+            }            
+        }
     }
-}
-void ingresoDeInventario(){
-    string codigo = "";
-    int cantidad = 0;
-
-    system ("cls");
-    cout << endl;
-    cout << 
-    cout << "* Ingreso de Productos al Inventario *" << endl;
-    
-    cout << "Ingrese el codigo del producoto: ";
-    cin >> codigo;
-    cout << endl;
-    cout << "Ingrese la cantidad del producto:  ";
-    cin >> cantidad;
-    cout << endl;
-
-    movimientoInventario (codigo, cantidad, "+");
-}
-void salidaDeInventario(){
-    string codigo = "";
-    int cantidad = 0;
-
-    system ("cls");
-    cout << endl;
-
-    cout << "* Salida de Productos al Inventario *" << endl;
-    cout << "Ingrese el codigo del producoto: ";
-    cin >> codigo;
-    cout << endl;
-    cout << "Ingrese la cantidad del producto:  ";
-    cin >> cantidad;
-    cout << endl;
-
-    movimientoInventario (codigo, cantidad, "-");
-}
-void transferenciaDeProductoRecivido(){
-    string codigo = "";
-    int cantidad = 0;
-
-    system ("cls");
-    cout << endl;
-   
-    cout << "* Transferencia De Productos Recividos *" << endl;
-
-    cout << "Ingrese el codigo del producoto: ";
-    cin >> codigo;
-    cout << endl;
-    cout << "Ingrese la cantidad del producto:  ";
-    cin >> cantidad;
-    cout << endl;
-
-    movimientoInventario (codigo, cantidad, "+");
-}
-void trasferenciaDeProductosEnviados(){
-    string codigo = "";
-    int cantidad = 0;
-
-    system ("cls");
-    cout << endl;
-  
-    cout << "* Trasferencia De Productos Enviados *" << endl;
- 
-    cout << "Ingrese el codigo del producoto: ";
-    cin >> codigo;
-    cout << endl;
-    cout << "Ingrese la cantidad del producto:  ";
-    cin >> cantidad;
-    cout << endl;
-
-    movimientoInventario (codigo, cantidad, "-");
-}
-
-object main(int argc, char const *argv[])
-{
-
-    int opcion = 0;
-
-    while (true) {
-        system ("cls");
-
-        cout << endl;
-     
-        cout << "* Software of Inv3ntry *" << endl;
-        cout << endl;
-        cout << "1 - Productos" << endl;
-        cout << "2 - Entrada de Inventario" << endl;
-        cout << "3 - Salida de Inventario" << endl;
-        cout << "4 - Transferencia de Productos Recividos de Tienda Norte" << endl;
-        cout << "5 - Transferencia de Productos Enviados a Tienda Norte" << endl;
-        cout << "0 - Salir" << endl;
-        cout << "Ingrese una opcion del menu: ";
-        cin >> opcion;
-
-        switch (opcion)
-        {
-        case 1: 
-            listarProductos();            
-            break;
-        case 2:
-            ingresoDeInventario();
-            break;
-        case 3:
-            salidaDeInventario();
-            break;
-        case 4:
-            transferenciaDeProductoRecivido();
-            break;
-        case 5:
-            trasferenciaDeProductosEnviados();
-            break;        
-        default:
-        break;
-        }
-
-        system ("pause");
-        
-        if (opcion == 0)
-        {
-            break;
-        }
-        
-
-        }
-    return 0;
 }
