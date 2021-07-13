@@ -6,11 +6,11 @@ namespace inventario
     {
         static string[,] productos = new string[5,3]
         {
-            { "001", "iPhone xPlus", "10" },
-            { "002", "Laptop Dell Latitude", "15" },
-            { "003", "Monitor LG QLedg", "12" },
-            { "004", "MouseMouse optico Ergonomic", "100" },
-            { "005", "Headset bits", "50" },
+            { "001", "iPhone xPlus", "0" },
+            { "002", "Laptop Dell Latitud", "15" },
+            { "003", "Monitor Samsung", "2" },
+            { "004", "Mouse", "100" },
+            { "005", "Headset ", "25" },
         };
 
         static void listarProductos() {
