@@ -23,31 +23,31 @@ public class Datos
 
     private void cargarProductos()
     {
-        Producto p1 = new Producto(1, "Blusa Floreada", 2000);
+        Producto p1 = new Producto(1, "Blusa Floreada", 2600);
         ListadeProductos.Add(p1);
 
-        Producto p2 = new Producto(2, "Pantalon Jean Marca PEPE ", 1500);
+        Producto p2 = new Producto(2, "Pantalon Jean Marca PEPE ", 3500);
         ListadeProductos.Add(p2);
 
         Producto p3 = new Producto(3, "Camisas Marca Peacer", 12000);
         ListadeProductos.Add(p3);
 
-        Producto p4 = new Producto(4, "Tenis de Hombre", 450);
+        Producto p4 = new Producto(4, "Tenis de Hombre", 3450);
         ListadeProductos.Add(p4);
 
-        Producto p5 = new Producto(5, "Zapatos de Hombre", 200);
+        Producto p5 = new Producto(5, "Zapatos de Hombre", 4200);
         ListadeProductos.Add(p5);
 
-        Producto p6 = new Producto(6, "Tenis de Mujer", 400);
+        Producto p6 = new Producto(6, "Tenis de Mujer", 4000);
         ListadeProductos.Add(p6);
 
-        Producto p7 = new Producto(7, "Zapato de Mujer", 800);
+        Producto p7 = new Producto(7, "Zapato de Mujer",54800);
         ListadeProductos.Add(p7);
 
-        Producto p8 = new Producto(8, "Ropa Interior de Mujer", 600);
+        Producto p8 = new Producto(8, "Ropa Interior de Mujer", 6600);
         ListadeProductos.Add(p8);
 
-        Producto p9 = new Producto(9, "Ropa Interior de Hombre", 100);
+        Producto p9 = new Producto(9, "Ropa Interior de Hombre", 5100);
         ListadeProductos.Add(p9);
 
         Producto p10 = new Producto(10, "Maquillaje", 2500);
