@@ -185,9 +185,9 @@ public class Datos
                 nuevaVenta.AgregarProducto(producto);
             }
 
-            Console.WriteLine("Desea realizar otra compra? SI/NO");
+            Console.WriteLine("Desea realizar otra compra? si/no");
             string continuar = Console.ReadLine();
-            if (continuar.ToLower() == "NO") {
+            if (continuar.ToLower() == "no") {
                 break;
             }
         }
