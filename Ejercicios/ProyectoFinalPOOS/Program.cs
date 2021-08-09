@@ -13,7 +13,7 @@ namespace ProyectoFinalPOOS
             {
                 Console.Clear();
                 Console.WriteLine("   //BIENVENIDOS A NUESTRA TIENDA// ");
-                Console.WriteLine("   Sistema POOS ");
+                Console.WriteLine("           / Sistema POOS /");
 
                 Console.WriteLine("");
                 Console.WriteLine("1 - Lista de Productos ");
