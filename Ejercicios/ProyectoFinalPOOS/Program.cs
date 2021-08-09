@@ -14,7 +14,7 @@ namespace ProyectoFinalPOOS
                 Console.Clear();
                 Console.WriteLine("   //Sistema POS// ");
                 Console.WriteLine("");
-                Console.WriteLine("1   Lista de Productoos ");
+                Console.WriteLine("1   Lista de Productos ");
                 Console.WriteLine("2 - Crear Venta");
                 Console.WriteLine("3 - Lista de Clientes");
                 Console.WriteLine("4 - Lista de Vendedores");

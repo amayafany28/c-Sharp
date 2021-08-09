@@ -41,17 +41,7 @@ public class Datos
         Producto p6 = new Producto(6, "Tenis de Mujer", 400);
         ListadeProductos.Add(p6);
 
-        Producto p6 = new Producto(6, "Maquillaje", 600);
-        ListadeProductos.Add(p7);
 
-        Producto p6 = new Producto(6, "Crema para el Cabello", 900);
-        ListadeProductos.Add(p8);
-
-        Producto p6 = new Producto(6, "Perfume Para Dama", 100);
-        ListadeProductos.Add(p9);
-
-        Producto p6 = new Producto(6, "Perfume Para Caballero", 900);
-        ListadeProductos.Add(p10);
     }
 
     private void cargarClientes()
@@ -136,7 +126,7 @@ public class Datos
             Console.WriteLine("");
         }
 
-        Console.WriteLine("Ingrese el codigo del vendedor: ");
+        Console.WriteLine("Por Favor, Ingrese el codigo del vendedor: ");
         string codigoVendedor = Console.ReadLine();
 
         Vendedor vendedor = ListadeVendedores.Find(v => v.Codigo.ToString() == codigoVendedor);
