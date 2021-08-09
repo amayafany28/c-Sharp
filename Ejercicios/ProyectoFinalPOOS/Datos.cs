@@ -66,6 +66,17 @@ public class Datos
 
         Cliente c3 = new Cliente(3, "Gladis Patricia Vasquez Lopez", "1615-1983-00063");
         ListadeClientes.Add(c3);
+
+        Cliente c4 = new Cliente(4, "Kennggy Enrique Enamorado Perez", "0501-1997-00275");
+        ListadeClientes.Add(c4);
+
+        Cliente c5 = new Cliente(5, "Fabricio Perdomo Ayala", "0501-1998-00145");
+        ListadeClientes.Add(c5);
+
+        Cliente c6 = new Cliente(6, "Delmi Adeli Gavarrete Perez", "1516-1998-00075");
+        ListadeClientes.Add(c6);
+
+     
     }
 
     private void cargarVendedores()
@@ -75,6 +86,9 @@ public class Datos
 
         Vendedor v2 = new Vendedor(2, "Sandy Maribel Enamorado Perez", "0502-1999-00098");
         ListadeVendedores.Add(v2);
+
+        Vendedor v3 = new Vendedor(3, "Fany Karolina Amaya Vasquez ", "1615-1998-00149");
+        ListadeVendedores.Add(v3);
     }
 
     public void ListarProductos()
@@ -108,7 +122,7 @@ public class Datos
     public void ListarVendedores()
     {
         Console.Clear();
-        Console.WriteLine("= Lista de Vendedores =");
+        Console.WriteLine(" Lista de Vendedores ");
         Console.WriteLine("");
         
         foreach (var vendedor in ListadeVendedores)
@@ -121,7 +135,7 @@ public class Datos
 
     public void CrearVenta()
     {
-        Console.WriteLine("= Creando Venta =");
+        Console.WriteLine(" Creando Venta ");
         Console.WriteLine("");
 
         Console.WriteLine("Por Favor, Ingrese el codigo del cliente: ");
@@ -171,9 +185,9 @@ public class Datos
                 nuevaVenta.AgregarProducto(producto);
             }
 
-            Console.WriteLine("Desea continuar? s/n");
+            Console.WriteLine("Desea realizar otra compra? SI/NO");
             string continuar = Console.ReadLine();
-            if (continuar.ToLower() == "n") {
+            if (continuar.ToLower() == "NO") {
                 break;
             }
         }

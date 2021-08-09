@@ -12,14 +12,18 @@ namespace ProyectoFinalPOOS
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("   //Sistema POS// ");
+                Console.WriteLine("   //BIENVENIDOS A NUESTRA TIENDA// ");
+                Console.WriteLine("   Sistema POOS ");
+
                 Console.WriteLine("");
-                Console.WriteLine("1   Lista de Productos ");
+                Console.WriteLine("1 - Lista de Productos ");
                 Console.WriteLine("2 - Crear Venta");
                 Console.WriteLine("3 - Lista de Clientes");
                 Console.WriteLine("4 - Lista de Vendedores");
                 Console.WriteLine("5 - Reporte de Ventas");
-                Console.WriteLine("0 - Salir");
+                Console.WriteLine("0 - Salir/ Gracias Por Su Visita/");
+
+               
                 opcion = Console.ReadLine();
 
                 switch (opcion)
